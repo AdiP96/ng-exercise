@@ -1,0 +1,19 @@
+<div class="center">
+    <div style="text-align: center;">
+        <h2>Users List</h2>
+    </div>
+    <mat-nav-list class="list">
+        <a class="listItem" mat-list-item  *ngFor="let user of users" (click)="goToUserDetails(user.id)"> {{ user.first_name }}
+            {{ user.last_name }}
+        </a>
+    </mat-nav-list>
+    <div class="pagination">
+        <button class="button" (click)="previousPage()" [disabled]="firstpage" mat-icon-button>
+            <mat-icon aria-hidden="false" aria-label="Example home icon">keyboard_arrow_left</mat-icon>
+        </button>
+        <button class="button" (click)="nextPage()" [disabled]="lastpage" mat-mini-fab>
+            <mat-icon aria-hidden="false" aria-label="Example home icon">keyboard_arrow_right</mat-icon>
+        </button>
+    </div>
+
+</div>

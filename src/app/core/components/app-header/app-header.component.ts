@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { User } from '../../models/user.model';
+import { AppComponent } from '../../../app.component';
 
 @Component({
   selector: 'ng-e-app-header',
@@ -8,25 +9,15 @@ import { User } from '../../models/user.model';
 })
 export class AppHeaderComponent implements OnInit {
   user: User = {
-    firstName: 'Ahsan',
-    lastName: 'Ayaz'
+    first_name: 'Ahsan',
+    last_name: 'Ayaz',
+    email: '',
+    id: null,
+    avatar: ''
   };
   isLoggedIn: boolean;
-  constructor() {}
+  constructor(public myapp: AppComponent) { }
 
-  ngOnInit() {
-    this.isLoggedIn = false;
-  }
+  ngOnInit() { }
 
-  login() {
-    this.isLoggedIn = true;
-  }
-
-  signup() {
-    this.isLoggedIn = true;
-  }
-
-  logout() {
-    this.isLoggedIn = false;
-  }
 }

@@ -1,0 +1,15 @@
+<button class="button" mat-icon-button (click)="goBackToUsersList()">
+    <mat-icon aria-hidden="false" aria-label="Example home icon">arrow_back</mat-icon>
+</button>
+<div *ngIf="user">
+    <mat-grid-list cols="1" rowHeight="128px">
+        <mat-grid-tile> <img src="{{user.avatar}}" alt="image">
+        </mat-grid-tile>
+        <mat-grid-tile>
+            <h3>{{user.first_name}} {{user.last_name}}</h3>
+        </mat-grid-tile>
+        <mat-grid-tile style="max-height: 30px;" >
+            <h3>{{user.email}}</h3>
+        </mat-grid-tile>
+    </mat-grid-list>
+</div>

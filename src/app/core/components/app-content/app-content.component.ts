@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { User } from '../../models/user.model';
+import { AppComponent } from '../../../app.component';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'ng-e-app-content',
@@ -8,21 +10,17 @@ import { User } from '../../models/user.model';
 })
 export class AppContentComponent implements OnInit {
   user: User = {
-    firstName: 'Ahsan',
-    lastName: 'Ayaz'
+    first_name: 'Ahsan',
+    last_name: 'Ayaz',
+    email: '',
+    id: null,
+    avatar: ''
   };
-  isLoggedIn: boolean;
-  constructor() {}
+  constructor(public myapp: AppComponent, private router: Router) { }
 
   ngOnInit() {
-    this.isLoggedIn = false;
   }
-
-  login() {
-    this.isLoggedIn = true;
-  }
-
-  logout() {
-    this.isLoggedIn = false;
+  goToUsersListPage() {
+    this.router.navigate([`/users`]);
   }
 }
